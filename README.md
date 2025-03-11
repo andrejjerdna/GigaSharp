@@ -56,7 +56,7 @@ public sealed class GigaChatProvider : IGigaChatProvider
         _tokenSource = new CancellationTokenSource();
     }
     
-    public async Task<byte[]> ImageGenerate()
+    public async Task<byte[]> GenerateImage()
     {
         _tokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(3));
 
