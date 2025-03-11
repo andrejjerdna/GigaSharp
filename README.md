@@ -11,7 +11,7 @@ builder.Services.AddGigaSharp(options =>
     options.MaxTokens = 220;
 });
 ```
-Получение тектового ответа:
+Получение текcтового ответа:
 
 ```csharp
 public sealed class GigaChatProvider : IGigaChatProvider
