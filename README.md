@@ -23,7 +23,7 @@ public sealed class GigaChatProvider : IGigaChatProvider
         _gigaChat = gigaChat;
     }
     
-    public async Task SomeMethod ()
+    public async Task SomeMethod()
     {
         var gigaChatResponse = await _gigaChat.Response(
             new Message[]
