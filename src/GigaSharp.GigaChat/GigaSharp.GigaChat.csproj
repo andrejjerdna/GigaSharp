@@ -8,7 +8,7 @@
 
     <PropertyGroup>
         <PackageId>GigaSharp</PackageId>
-        <Version>0.0.1</Version>
+        <Version>0.0.2</Version>
         <Authors>andrejjerdna</Authors>
         <Description>Неофициальная библиотека по работе с нейронной сетью Gigachat от Сбера.</Description>
         <PackageTags>GigaChat SberAI AI .NET C#</PackageTags>
