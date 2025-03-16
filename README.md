@@ -53,7 +53,6 @@ public sealed class GigaChatProvider : IGigaChatProvider
     public GigaChatProvider(IGigaChat gigaChat)
     {
         _gigaChat = gigaChat;
-        _tokenSource = new CancellationTokenSource();
     }
     
     public async Task<byte[]> GenerateImage()
