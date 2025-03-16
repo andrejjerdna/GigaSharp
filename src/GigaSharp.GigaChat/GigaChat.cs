@@ -14,7 +14,7 @@ public sealed class GigaChat : IGigaChat
         _gigaChatRequestExecutor = gigaChatRequestExecutor;
     }
     
-    public async Task<GigaChatResponse> Response(IEnumerable<Message> messages)
+    public async Task<GigaChatResponse> GetResponse(IEnumerable<Message> messages)
     {
         var completionRequest = GigaChatRequestBuilder.CompletionRequestBuild(messages, _modelOptions);
 
@@ -28,10 +28,10 @@ public sealed class GigaChat : IGigaChat
         return response;
     }
     
-    public async Task<byte[]> GetImageAsBytes(string content)
+    public async Task<byte[]> GetImageAsBytes(string promt)
     {
         var completionRequest = GigaChatRequestBuilder.GetFileRequest(
-            Message.CreateUserMessage(content), 
+            Message.CreateUserMessage(promt), 
             _modelOptions);
 
         var response = await _gigaChatRequestExecutor.GetResponse(completionRequest);

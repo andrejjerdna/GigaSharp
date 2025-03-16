@@ -2,6 +2,6 @@
 
 public interface IGigaChat
 {
-    Task<GigaChatResponse> Response(IEnumerable<Message> messages);
-    Task<byte[]> GetImageAsBytes(string content);
+    Task<GigaChatResponse> GetResponse(IEnumerable<Message> messages);
+    Task<byte[]> GetImageAsBytes(string promt);
 }
