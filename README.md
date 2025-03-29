@@ -25,7 +25,7 @@ public sealed class GigaChatProvider : IGigaChatProvider
     
     public async Task SomeMethod()
     {
-        var gigaChatResponse = await _gigaChat.Response(
+        var gigaChatResponse = await _gigaChat.GetResponse(
             new Message[]
             {
                 Message.CreateUserMessage("Сочини стихотворение о добром человеке.")
