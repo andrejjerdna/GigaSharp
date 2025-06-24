@@ -7,7 +7,7 @@ internal static class GigaChatRequestBuilder
         GigaChatModelOptions modelOptions)
         => new GigaChatRequest
         {
-            Model = "GigaChat:latest",
+            Model = modelOptions.Model,
             FunctionCall = "none",
             Messages = messages,
             Temperature = modelOptions.Temperature,
@@ -20,7 +20,7 @@ internal static class GigaChatRequestBuilder
         GigaChatModelOptions modelOptions)
         => new GigaChatRequest
         {
-            Model = "GigaChat:latest",
+            Model = modelOptions.Model,
             FunctionCall = "auto",
             Messages = [message],
             Temperature = modelOptions.Temperature,
