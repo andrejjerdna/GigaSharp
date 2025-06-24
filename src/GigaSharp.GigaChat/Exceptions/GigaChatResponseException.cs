@@ -1,18 +1,24 @@
 ﻿namespace GigaSharp.GigaChat.Exceptions;
 
-public sealed class GigaChatResponseException : Exception
+public abstract class GigaChatResponseException : Exception
 {
-    public GigaChatResponseException()
+    protected GigaChatResponseException()
     {
     }
 
-    public GigaChatResponseException(string message)
+    protected GigaChatResponseException(string message)
         : base(message)
     {
     }
 
-    public GigaChatResponseException(string message, Exception inner)
+    protected GigaChatResponseException(string message, Exception inner)
         : base(message, inner)
     {
     }
 }
+
+public sealed class GigaChatEmptyResponseException(string message) : GigaChatResponseException(message);
+
+public sealed class GigaChatMaxLenghtResponseException(string message) : GigaChatResponseException(message);
+
+public sealed class GigaChatBlackListResponseException(string message) : GigaChatResponseException(message);

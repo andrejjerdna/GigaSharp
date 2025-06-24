@@ -4,27 +4,41 @@ namespace GigaSharp.GigaChat.Extensions;
 
 internal static class MappingExtensions
 {
-    public static GigaChatCompletionRequest ToGigaChatRequest(this GigaChatRequest request)
-        => new GigaChatCompletionRequest
+    public static GigaChatCompletionRequestHttpModel ToGigaChatRequest(this GigaChatRequest request)
+        => new GigaChatCompletionRequestHttpModel
         {
             Model = request.Model,
             Temperature = request.Temperature,
             TopP = request.TopP,
             Count = request.Count,
             MaxTokens = request.MaxTokens,
-            MessageCollection = request.Messages?.Select(x => new GigaChatMessage
+            MessageCollection = request.Messages?.Select(x => new GigaChatMessageHttpModel
             {
                 Role = x.Role,
                 Content = x.Content
-            })
+            }),
+            Stream = false
+        };
+    
+    public static GigaChatEmbeddingRequestHttpModel ToGigaChatRequest(this GigaChatEmbeddingRequest request)
+        => new GigaChatEmbeddingRequestHttpModel
+        {
+            Model = request.Model,
+            Input = request.Input
         };
 
-    public static GigaChatResponse ToModel(this HttpModels.GigaChatResponse response)
+    public static GigaChatResponse ToModel(this HttpModels.GigaChatResponseHttpModel responseHttpModel)
         => new GigaChatResponse(
-            response.Choices?
+            responseHttpModel.Choices?
                 .Select(x 
                     => new Choice(x.GigaChatResponseMessage?.Content, x.GigaChatResponseMessage?.Role))
                 .ToArray()
-            ?? Array.Empty<Choice>(),
-            new ResponseMetaInfo());
+            ?? [],
+            responseHttpModel.GigaChatUsage != null 
+                ? new ResponseMetaInfo(
+                    responseHttpModel.GigaChatUsage.PromptTokens, 
+                    responseHttpModel.GigaChatUsage.CompletionTokens, 
+                    responseHttpModel.GigaChatUsage.PrecachedPromptTokens,
+                    responseHttpModel.GigaChatUsage.TotalTokens)
+                : null);
 }

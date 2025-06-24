@@ -2,13 +2,13 @@
 
 namespace GigaSharp.GigaChat.HttpModels;
 
-internal sealed class GigaChatChatModel
+internal sealed class GigaChatChatModelHttpModel
 {
     [JsonPropertyName("model")]
     public string? Model { get; set; }
     
     [JsonPropertyName("messages")]
-    public List<GigaChatMessage>? Messages { get; set; }
+    public List<GigaChatMessageHttpModel>? Messages { get; set; }
     
     [JsonPropertyName("function_call")]
     public string? FunctionCall { get; set; }

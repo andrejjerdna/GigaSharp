@@ -22,9 +22,16 @@ internal static class GigaChatRequestBuilder
         {
             Model = "GigaChat:latest",
             FunctionCall = "auto",
-            Messages = new []{ message },
+            Messages = [message],
             Temperature = modelOptions.Temperature,
             TopP = modelOptions.TopP,
             MaxTokens = modelOptions.MaxTokens
+        };
+    
+    public static GigaChatEmbeddingRequest GetEmbeddingRequest(string text)
+        => new GigaChatEmbeddingRequest
+        {
+            Model = "Embeddings",
+            Input = [text]
         };
 }

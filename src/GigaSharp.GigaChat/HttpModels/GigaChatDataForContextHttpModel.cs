@@ -2,7 +2,7 @@
 
 namespace GigaSharp.GigaChat.HttpModels;
 
-internal sealed class GigaChatDataForContext
+internal sealed class GigaChatDataForContextHttpModel
 {
     [JsonPropertyName("content")]
     public string? Content { get; set; }
@@ -11,7 +11,7 @@ internal sealed class GigaChatDataForContext
     public string? Role { get; set; }
 
     [JsonPropertyName("function_call")]
-    public GigaChatFunctionCall? GigaChatFunctionCall { get; set; }
+    public GigaChatFunctionCallHttpModel? GigaChatFunctionCall { get; set; }
 
     [JsonPropertyName("name")]
     public string? Name { get; set; }

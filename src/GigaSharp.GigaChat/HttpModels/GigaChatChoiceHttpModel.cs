@@ -2,10 +2,10 @@
 
 namespace GigaSharp.GigaChat.HttpModels;
 
-internal sealed class GigaChatChoice
+internal sealed class GigaChatChoiceHttpModel
 {
     [JsonPropertyName("message")]
-    public GigaChatResponseMessage? GigaChatResponseMessage { get; set; }
+    public GigaChatResponseMessageHttpModel? GigaChatResponseMessage { get; set; }
 
     [JsonPropertyName("index")]
     public int Index { get; set; }

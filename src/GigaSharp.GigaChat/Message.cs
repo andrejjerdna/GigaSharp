@@ -1,6 +1,6 @@
 ﻿namespace GigaSharp.GigaChat;
 
-public record struct Message
+public readonly record struct Message
 {
     private Message(string role, string content)
     {
@@ -10,10 +10,16 @@ public record struct Message
     public string Role { get; }
     public string Content { get; }
 
-    public static Message CreateUserMessage(string content)
-        => new Message("user", content);
+    public static Message CreateUserMessage(string message)
+        => new Message("user", message);
     
-    public static Message CreateMessage(string role, string content)
-        => new Message(role, content);
+    public static Message CreateSystemMessage(string message)
+        => new Message("system", message);
+    
+    public static Message CreateAssistantMessage(string message)
+        => new Message("assistant", message);
+    
+    public static Message CreateMessage(string role, string message)
+        => new Message(role, message);
 }
     
