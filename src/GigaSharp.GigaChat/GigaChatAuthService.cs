@@ -55,7 +55,7 @@ public class GigaChatAuthService : IGigaChatAuthService
         
         responseMessage.EnsureSuccessStatusCode();
         
-        var sourceAuthData = JsonSerializer.Deserialize<GigaChatAuthResultData>(
+        var sourceAuthData = JsonSerializer.Deserialize<GigaChatAuthResultDataHttpModel>(
             await responseMessage.Content.ReadAsStringAsync());
 
         return sourceAuthData?.AccessToken is null

@@ -2,7 +2,7 @@
 
 namespace GigaSharp.GigaChat.HttpModels;
 
-internal sealed class GigaChatResponseMessage
+internal sealed class GigaChatResponseMessageHttpModel
 {
     [JsonPropertyName("content")]
     public string? Content { get; set; }
@@ -11,5 +11,5 @@ internal sealed class GigaChatResponseMessage
     public string? Role { get; set; }
 
     [JsonPropertyName("data_for_context")]
-    public List<GigaChatDataForContext>? DataForContext { get; set; }
+    public List<GigaChatDataForContextHttpModel>? DataForContext { get; set; }
 }

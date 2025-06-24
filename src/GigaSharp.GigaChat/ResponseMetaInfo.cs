@@ -1,6 +1,7 @@
 ﻿namespace GigaSharp.GigaChat;
 
-public class ResponseMetaInfo
-{
-    
-}
+public readonly record struct ResponseMetaInfo(
+    int PromptTokens, 
+    int CompletionTokens, 
+    int PrecachedPromptTokens,
+    int TotalTokens);

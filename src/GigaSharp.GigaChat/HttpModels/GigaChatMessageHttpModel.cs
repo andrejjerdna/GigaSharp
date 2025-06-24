@@ -2,7 +2,7 @@
 
 namespace GigaSharp.GigaChat.HttpModels;
 
-internal sealed class GigaChatMessage
+internal sealed class GigaChatMessageHttpModel
 {
     [JsonPropertyName("role")]
     public string? Role { get; set; }

@@ -2,7 +2,7 @@
 
 namespace GigaSharp.GigaChat.HttpModels;
 
-internal sealed class GigaChatCompletionRequest
+internal sealed class GigaChatCompletionRequestHttpModel
 {
     [JsonPropertyName("model")]
     public string Model { get; set; } = "GigaChat:latest";
@@ -23,5 +23,8 @@ internal sealed class GigaChatCompletionRequest
     public long? MaxTokens { get; set; }
         
     [JsonPropertyName("messages")]
-    public IEnumerable<GigaChatMessage>? MessageCollection { get; set; }
+    public IEnumerable<GigaChatMessageHttpModel>? MessageCollection { get; set; }
+    
+    [JsonPropertyName("stream")]
+    public bool Stream { get; set; }
 }

@@ -2,10 +2,10 @@
 
 namespace GigaSharp.GigaChat.HttpModels;
 
-internal class GigaChatResponse
+internal class GigaChatResponseHttpModel
 {
     [JsonPropertyName("choices")]
-    public List<GigaChatChoice>? Choices { get; set; }
+    public List<GigaChatChoiceHttpModel>? Choices { get; set; }
 
     [JsonPropertyName("created")]
     public int Created { get; set; }
@@ -17,5 +17,5 @@ internal class GigaChatResponse
     public string? Object { get; set; }
 
     [JsonPropertyName("usage")]
-    public GigaChatUsage? GigaChatUsage { get; set; }
+    public GigaChatUsageHttpModel? GigaChatUsage { get; set; }
 }

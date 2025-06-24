@@ -2,4 +2,4 @@
 
 public record GigaChatResponse(
     IReadOnlyCollection<Choice> Choices, 
-    ResponseMetaInfo MetaInfo);
+    ResponseMetaInfo? MetaInfo = null);
