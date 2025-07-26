@@ -12,4 +12,5 @@ public record GigaChatModelOptions
     public float? Temperature { get; set; } = 0.7f;
     public float? TopP { get; set; } = 0.5f;
     public long? MaxTokens { get; set; } = 100;
+    public string Model { get; set; } = "GigaChat:latest";
 }
